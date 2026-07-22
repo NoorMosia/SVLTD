@@ -1,0 +1,354 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&amp;family=Manrope:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#303030",
+                        "background": "#121414",
+                        "surface-variant": "#333535",
+                        "secondary": "#c8c6c5",
+                        "on-tertiary-container": "#4f4e4e",
+                        "on-surface-variant": "#d4c4af",
+                        "outline-variant": "#504535",
+                        "tertiary": "#dedcdb",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary": "#ffd795",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container": "#1e2020",
+                        "inverse-primary": "#7d5700",
+                        "on-primary": "#422c00",
+                        "primary-fixed-dim": "#fabc44",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-bright": "#37393a",
+                        "tertiary-container": "#c2c0c0",
+                        "on-tertiary-fixed": "#1b1b1c",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "error-container": "#93000a",
+                        "primary-container": "#f4b63f",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container-lowest": "#0c0f0f",
+                        "surface-container-highest": "#333535",
+                        "error": "#ffb4ab",
+                        "on-primary-container": "#694900",
+                        "secondary-container": "#4a4949",
+                        "outline": "#9d8f7b",
+                        "surface": "#121414",
+                        "on-primary-fixed-variant": "#5f4100",
+                        "on-primary-fixed": "#271900",
+                        "on-secondary-fixed-variant": "#474646",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary": "#313030",
+                        "surface-container-high": "#282a2b",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e2e2e2",
+                        "surface-container-low": "#1a1c1c",
+                        "primary-fixed": "#ffdeaa",
+                        "on-surface": "#e2e2e2",
+                        "on-secondary-container": "#bab8b7",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-tint": "#fabc44",
+                        "surface-dim": "#121414",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap-md": "80px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "section-gap-lg": "120px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "display": ["Hanken Grotesk"],
+                        "body-lg": ["Manrope"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    }catch(_e){}</script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script></head><body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface-container border-b border-outline-variant h-20">
+<nav class="flex justify-between items-center px-gutter w-full h-full max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<img alt="Solar Valley Logo" class="w-10 h-10 object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlTeAIf0qDmTLzeWIHQ0FkJwfHyOW3SFdDWzWyXmRT5EsJV5hRNHJqMrUCA-jkeROYv17EsIQEm9cVQJrqhBep0Sb7ppdAJROoxyfHW_ts5CwrvcnBIfQlTxiaO8UPq0JsiEsraZTKwJ2tbuJqFJFSTIyu_kFZSjXWZwj8Dk1qj1Ugm7Oo_TVMmtI0oryOy4sTIbngH5P7BGUNbsyEPcosuc1OuODcH6mkhAJ-7nxbd06pnrn59LwkJpnu2zJN45d_wRJ_YVN7n8H6">
+<span class="font-display text-headline-md font-bold text-primary">Solar Valley</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">Projects</a>
+<a class="font-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">Residential</a>
+<a class="font-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">Commercial</a>
+<a class="font-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">Impact</a>
+<a class="font-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">About</a>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold hover:opacity-80 transition-all">Get Quote</button>
+</div>
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[500px] flex items-center justify-center overflow-hidden py-section-gap-lg">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 to-background z-10"></div>
+<img alt="Solar Powered Skyline" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLukKgbugASaFX5XMsrN0Gctib8pdw5j0X03IMRl13JcLerszUSck88O8qKQO3jv-2qwsPQ6lYf5CN4RlauySqMqCW5zsU0BWLF5OnL81Bz9eLpWfL8ZENHdZThIhIrOSNxQ61QWeaSgweGfBmf2UuqIyqPj1r3mHUj2sbpT6o_H6S2DTCGzXmfGq7kT1IJw7Z57zrgGaQTpgZWPZDmrIfNvxXW07PBSDvFLgl10gPZRcSFePmP9uUKPHeIV">
+</div>
+<div class="relative z-20 text-center px-gutter max-w-4xl mx-auto">
+<div class="flex items-center justify-center gap-4 mb-6">
+<span class="h-[1px] w-12 bg-primary"></span>
+<span class="font-label-caps text-primary">POWERING TOMORROW</span>
+<span class="h-[1px] w-12 bg-primary"></span>
+</div>
+<h1 class="font-display text-display mb-6">Powering Communities</h1>
+<p class="font-body-lg text-secondary leading-relaxed max-w-2xl mx-auto">
+                    From single households to critical public infrastructure, Solar Valley is dedicated to engineering a sustainable future. Explore how we are transforming lives through precision renewable technology.
+                </p>
+</div>
+</section>
+<!-- Project Grid (Bento Style) -->
+<section class="py-section-gap-md px-gutter max-w-container-max mx-auto">
+<div class="bento-grid">
+<!-- Residential Project -->
+<div class="col-span-12 md:col-span-8 group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container">
+<div class="aspect-[16/9] overflow-hidden">
+<img alt="Residential Solar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLsmC4TWXN_DfNocfKTTfWAWN73Jb4ZkDIhXQjMdwxgW7GG6vXP18k2HL-acpoCfKBJRBfH-52IpZ0ZOTuCHcTsj7PdcRcvz5FCuQ_Y4Hy48cjg_nbksTdqpxj1rLg3CZX4KJVHKt7atsTMm-ADZzW2t0pyf34dayb9zpgYJzJZiHD-hFeOny-FmoARFGp9uQoMKQ7q9Fmsvq22quifzWzUhRl6P96R_CYOgkDPbG8OTR-AG2sGjjNeV09kc">
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label-caps text-primary-fixed-dim bg-on-primary-fixed-variant px-3 py-1 rounded-full mb-3 inline-block">RESIDENTIAL</span>
+<h3 class="font-headline-lg text-on-surface">Modern Family Estates (Homes)</h3>
+</div>
+<div class="text-right">
+<div class="text-primary font-display text-headline-md font-bold">80%</div>
+<div class="text-secondary text-sm font-label-caps">SAVINGS</div>
+</div>
+</div>
+<p class="text-secondary font-body-md max-w-xl mb-6">Implementing sleek, black-frame solar technology into modern suburban homes to maximize efficiency without compromising on aesthetic appeal.</p>
+<div class="flex gap-4">
+<div class="bg-surface-container-high border border-outline-variant px-4 py-2 rounded-lg">
+<span class="text-primary font-label-caps">15kW SYSTEM</span>
+</div>
+<div class="bg-surface-container-high border border-outline-variant px-4 py-2 rounded-lg">
+<span class="text-primary font-label-caps">OFF-GRID READY</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Clinics -->
+<div class="col-span-12 md:col-span-4 group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container">
+<div class="aspect-square overflow-hidden">
+<img alt="Medical Clinic Solar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLuUR1if2B3wA5HVTUGt8v3SZldhWJcPPGvakekq7MRIEZyKS-Ejx5EmvsXiLrhHIbDsVY3bnGY9i7yi53TvWXuJSEwjoUk6yU-MrYI6lxQ8NY_DywmJ9QqNwx05vOmV9Iy4SHsrv5LvwnNPCoAYSqrJ3KuTpxYKtYoLmA4LXlmp8KZ-75qjRXwwGMIv5duLikjVAW1T8YGRxjtXOQZyM-vndaWtkAz3WEzoWKaKDSohK2Rnax59_arCmKbr">
+</div>
+<div class="p-6">
+<span class="font-label-caps text-primary-fixed-dim bg-on-primary-fixed-variant px-3 py-1 rounded-full mb-3 inline-block">HEALTHCARE</span>
+<h3 class="font-headline-md text-on-surface mb-2">Community Clinics (Clinics)</h3>
+<p class="text-secondary text-sm mb-4">Ensuring zero-downtime for critical medical storage and diagnostic equipment.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant">
+<span class="text-primary font-bold">24/7 Power uptime</span>
+<span class="material-symbols-outlined text-primary" data-original-icon="medical_services">medical_services</span>
+</div>
+</div>
+</div>
+<!-- Schools -->
+<div class="col-span-12 md:col-span-4 group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container">
+<div class="aspect-square bg-surface-container-highest relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A bright, modern educational facility with large windows and a distinct solar array on the roof, surrounded by green lawns. Photorealistic style, sunlight-drenched architecture, corporate modern aesthetic with deep charcoal and sun-yellow highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUlc7CoNggSccnDJeD-3XwOPEh72h7IxtsA4cXE_O0pbXZONblqjtdnhEFACqU0K21F3mhkRtP85P5AqusKc7Yaic-kCFt2NA9zq8u1fVXQm0oG_U-MbLSbTviOUjtHZ6vTDYzUITaWGyN9Tf3eyA8uPkjiuRZW127LNW-yeK5VdQsuoyIHbI04wylTOd7hb-uMTN9XIR-AU4ZnaDT5VrASFjRtzV0csOqzgHWVkTyiraEarK3BBfqzYx1VoEaC3kprjvENiK98tOo">
+</div>
+<div class="p-6">
+<span class="font-label-caps text-primary-fixed-dim bg-on-primary-fixed-variant px-3 py-1 rounded-full mb-3 inline-block">EDUCATION</span>
+<h3 class="font-headline-md text-on-surface mb-2">Green Schools Initiative (Schools)</h3>
+<p class="text-secondary text-sm mb-4">Empowering the next generation with sustainable energy for digital learning labs.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant">
+<span class="text-primary font-bold">35kW Installation</span>
+<span class="material-symbols-outlined text-primary">school</span>
+</div>
+</div>
+</div>
+<!-- Commercial/Shops -->
+<div class="col-span-12 md:col-span-8 group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container">
+<div class="aspect-[21/9] bg-surface-container-highest relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A wide angle shot of a modern retail shopping complex at dusk, with its rooftop fully covered in high-tech solar panels. The building glow with internal warm lights against a deep blue sky. Corporate high-contrast style with precision-milled architectural details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWxW-0ISPwtbYx-M9n1fCmUvM3SaR8fYO8kbH7QnqqHAgU25gNOxmcPnKjbO130685NltJQm8fIDE1G1zz52Dz2Nt5tmOB0zzI_pLmcPFL7v5cmAoSqL4PRzyZrR0EDoOx-hhzgSr6PKjanwUCPL0SGh-Cb-L9cuBELzUu0Ar1DthQBoVlL2U7xlh9iNcGF9sbEEEDrF5imMSeRml_OgeWi-lUBpBSy7Yzq5x3Uq6ANiCBQDIIU061pRNNoJxbnQrsJt_Uz7YthaUf">
+</div>
+<div class="p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<span class="font-label-caps text-primary-fixed-dim bg-on-primary-fixed-variant px-3 py-1 rounded-full mb-3 inline-block">COMMERCIAL</span>
+<h3 class="font-headline-lg text-on-surface mb-2">Retail Power Hubs (Shops)</h3>
+<p class="text-secondary font-body-md max-w-lg">Scalable energy solutions for commercial stores to eliminate operational risks from load shedding.</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="text-primary font-display text-headline-md font-bold">120kW+</div>
+<div class="text-secondary text-sm font-label-caps text-right">INDUSTRIAL GRADE</div>
+<button class="mt-2 bg-transparent border border-primary text-primary px-4 py-2 font-label-caps rounded-lg hover:bg-primary hover:text-on-primary transition-colors">Case Study</button>
+</div>
+</div>
+</div>
+<!-- Churches-->
+<div class="col-span-12 md:col-span-6 group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container">
+<div class="aspect-[4/3] bg-surface-container-highest relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A grand community church with modern architectural lines featuring a integrated solar energy system on its steep roof. The lighting is soft morning sun, creating a peaceful and sustainable atmosphere. High-end architectural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxIdOzbqqLwQQ49RVOrvc8NoPBlvjjm8714pDVQ8cNuB5HhHVbqrr4pAcZtzNF8QZWxVS-ktEN-uI4UtC25j_YWcMf_dKyYf4ItjH3D3ycubtMeIxp-EviD04gTDWDeO9Ync6cW3oNuJU_q0a74WFt9KZ49GbLkB9JsndlyJoMs8cX906ckTua7Aw2LAn7n8o3FvBRKV8iStXTornoRpMDRNJkdhJ_3vI4SdDnQ7oI6e_54rt--5Oqdp_Hy-aQpLhyvsJZCfMbTN5P">
+</div>
+<div class="p-6">
+<span class="font-label-caps text-primary-fixed-dim bg-on-primary-fixed-variant px-3 py-1 rounded-full mb-3 inline-block">COMMUNITY</span>
+<h3 class="font-headline-md text-on-surface mb-2">Faith-Based Energy (Churches)</h3>
+<p class="text-secondary text-sm mb-4">Reducing operational overhead for religious centers to refocus funds on community outreach.</p>
+<div class="flex items-center gap-6">
+<div>
+<span class="block text-primary font-bold">60%</span>
+<span class="text-[10px] text-secondary font-label-caps">COST REDUCTION</span>
+</div>
+<div class="w-[1px] h-10 bg-outline-variant"></div>
+<div>
+<span class="block text-primary font-bold">25kW</span>
+<span class="text-[10px] text-secondary font-label-caps">ARRAY SIZE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Libraries -->
+<div class="col-span-12 md:col-span-6 group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container">
+<div class="aspect-[4/3] bg-surface-container-highest relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Interior of a modern community library with solar-powered LED lighting and efficient cooling. Large glass walls show solar panels on the exterior facade. The mood is intellectual and futuristic, emphasizing precision engineering and clean energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAku59TdTJtB-bliaEFivfd8znKAc-Fqs_hSCEMlnBIiFJR9A2aIYjKEJGd204ts_kdBpPC9Bkbjc6hOIO5yURaOch2eJQyq4Glc2xWifBUrY5OQAdfMz3aJefVcR0K5Bglb4_jqNk2lx3Bb38egscLjB6N_l_QDwOov8rtLo7xK8Hsk6o3WH4O8YdAoTZhzughZONJVcP5Q1hPwkk0ppTIQYCnG_c-BFYGpT7T4ia0gPthwGuvTVPdSUhQFprR1wkpyZX_wtqNlRp6">
+</div>
+<div class="p-6">
+<span class="font-label-caps text-primary-fixed-dim bg-on-primary-fixed-variant px-3 py-1 rounded-full mb-3 inline-block">PUBLIC SPACE</span>
+<h3 class="font-headline-md text-on-surface mb-2">Smart Libraries (Community Libraries)</h3>
+<p class="text-secondary text-sm mb-4">Solar-powered lighting and high-speed internet hubs for public knowledge centers.</p>
+<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="bg-surface-container-low p-3 rounded border border-outline-variant">
+<span class="material-symbols-outlined text-primary block mb-1">wifi</span>
+<span class="text-xs text-secondary font-label-caps">UNINTERRUPTED CONNECTIVITY</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded border border-outline-variant">
+<span class="material-symbols-outlined text-primary block mb-1">ac_unit</span>
+<span class="text-xs text-secondary font-label-caps">SOLAR COOLING</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap-lg bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-gutter text-center">
+<h2 class="font-display text-headline-lg mb-6">Ready to Power Your Future?</h2>
+<p class="text-secondary font-body-lg max-w-xl mx-auto mb-10">Join hundreds of South African communities already benefiting from Solar Valley's engineering excellence.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto bg-primary text-on-primary px-10 py-4 font-display font-bold text-lg rounded-lg hover:opacity-90 transition-opacity">Request a Custom Quote</button>
+<button class="w-full sm:w-auto border border-outline text-on-surface px-10 py-4 font-display font-bold text-lg rounded-lg hover:bg-surface-variant transition-colors">Download Portfolio</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-start py-section-gap-md px-gutter w-full max-w-container-max mx-auto gap-12">
+<div class="max-w-xs">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Solar Valley Logo" class="w-12 h-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlTeAIf0qDmTLzeWIHQ0FkJwfHyOW3SFdDWzWyXmRT5EsJV5hRNHJqMrUCA-jkeROYv17EsIQEm9cVQJrqhBep0Sb7ppdAJROoxyfHW_ts5CwrvcnBIfQlTxiaO8UPq0JsiEsraZTKwJ2tbuJqFJFSTIyu_kFZSjXWZwj8Dk1qj1Ugm7Oo_TVMmtI0oryOy4sTIbngH5P7BGUNbsyEPcosuc1OuODcH6mkhAJ-7nxbd06pnrn59LwkJpnu2zJN45d_wRJ_YVN7n8H6">
+<span class="font-display text-headline-md font-bold text-primary">Solar Valley</span>
+</div>
+<p class="text-secondary text-sm mb-6">Engineering excellence for a sustainable future. We provide high-end renewable energy solutions for residential, commercial, and community sectors.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">facebook</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">groups</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+<div>
+<h4 class="font-label-caps text-primary mb-6">QUICK LINKS</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-secondary hover:text-primary transition-colors" href="#">Home</a></li>
+<li class=""><a class="text-secondary hover:text-primary transition-colors" href="#">About Us</a></li>
+<li class=""><a class="text-secondary hover:text-primary transition-colors" href="#">Solar Solutions</a></li>
+<li class=""><a class="text-secondary hover:text-primary transition-colors" href="#">Projects</a></li>
+</ul>
+</div>
+<div class="">
+<h4 class="font-label-caps text-primary mb-6">RESOURCES</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-secondary hover:text-primary transition-colors" href="#">Care Plan</a></li>
+<li class=""><a class="text-secondary hover:text-primary transition-colors" href="#">Impact Report</a></li>
+<li class=""><a class="text-secondary hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li class=""><a class="text-secondary hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<h4 class="font-label-caps text-primary mb-6">CONTACT US</h4>
+<ul class="space-y-4">
+<li class="flex gap-3 text-secondary">
+<span class="material-symbols-outlined text-primary text-sm">call</span>
+<span class="">+27 11 123 4567</span>
+</li>
+<li class="flex gap-3 text-secondary">
+<span class="material-symbols-outlined text-primary text-sm">mail</span>
+<span class="">info@solarvalleyenergy.co.za</span>
+</li>
+<li class="flex gap-3 text-secondary">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="">Johannesburg, South Africa</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant py-6 px-gutter">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-label-caps text-secondary/60">
+<p class="">© 2024 Solar Valley Energy. Engineering excellence for a sustainable future.</p>
+<p class="">Powered by Clean Energy. Driven by Purpose.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Subtle micro-interaction for cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.borderColor = 'var(--primary)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.borderColor = 'var(--outline-variant)';
+            });
+        });
+
+        // Simple scroll observer for top nav transparency
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-surface-container/95', 'backdrop-blur-md');
+            } else {
+                header.classList.remove('bg-surface-container/95', 'backdrop-blur-md');
+            }
+        });
+    </script>
+
+</body></html>
