@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Valley Energy | Reliable Energy. Sustainable Future.</title>
+
+  <!-- Google Fonts: Hanken Grotesk (300-800), Manrope (400, 500), JetBrains Mono (500) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Manrope:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN with plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Tailwind Configuration: Solar Kinetic Design Tokens -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            background: '#121414',
+            surface: {
+              DEFAULT: '#121414',
+              bright: '#37393a',
+              container: {
+                DEFAULT: '#1e2020',
+                low: '#1a1c1c',
+                high: '#282a2b',
+                highest: '#333535',
+                lowest: '#0c0f0f',
+              },
+            },
+            primary: {
+              DEFAULT: '#ffd795',
+              container: '#f4b63f',
+            },
+            'on-primary': {
+              DEFAULT: '#422c00',
+              container: '#694900',
+            },
+            secondary: {
+              DEFAULT: '#c8c6c5',
+            },
+            'on-surface': '#e2e2e2',
+            'on-background': '#e2e2e2',
+            outline: {
+              DEFAULT: '#9d8f7b',
+              variant: '#504535',
+            },
+            error: '#ffb4ab',
+          },
+          fontFamily: {
+            display: ['Hanken Grotesk', 'system-ui', 'sans-serif'],
+            headline: ['Hanken Grotesk', 'system-ui', 'sans-serif'],
+            'body-lg': ['Manrope', 'system-ui', 'sans-serif'],
+            'body-md': ['Manrope', 'system-ui', 'sans-serif'],
+            label: ['JetBrains Mono', 'monospace'],
+          },
+          fontSize: {
+            'display': ['72px', { lineHeight: '80px', letterSpacing: '-0.02em', fontWeight: '800' }],
+            'headline-lg': ['48px', { lineHeight: '56px', letterSpacing: '-0.01em', fontWeight: '700' }],
+            'headline-md': ['32px', { lineHeight: '40px', fontWeight: '600' }],
+            'body-lg': ['18px', { lineHeight: '28px', fontWeight: '400' }],
+            'body-md': ['16px', { lineHeight: '24px', fontWeight: '400' }],
+            'label-caps': ['12px', { lineHeight: '16px', letterSpacing: '0.1em', fontWeight: '500' }],
+          },
+          spacing: {
+            'base': '8px',
+            'gutter': '24px',
+            'margin-mobile': '16px',
+            'section-gap-md': '80px',
+            'section-gap-lg': '120px',
+            'container-max': '1280px',
+          },
+          borderRadius: {
+            DEFAULT: '0.125rem',
+            lg: '0.25rem',
+            xl: '0.5rem',
+            full: '0.75rem',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(rgba(18, 20, 20, 0.4), rgba(18, 20, 20, 0.8));
+    }
+
+    .nav-blur {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .text-shadow {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Section reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered children animation */
+    .reveal-child {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .reveal-child.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-background text-[#121414] dark:text-on-background font-body-md antialiased transition-colors duration-300">
+
+  <!-- BEGIN: Navigation Bar -->
+  <header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-surface-container/90 border-b border-gray-200 dark:border-outline-variant h-16 transition-all duration-300" id="main-nav">
+    <div class="flex justify-between items-center max-w-[1280px] mx-auto px-6 h-full">
+      <!-- Logo -->
+      <a href="#" class="flex items-center">
+        <img src="Inspiration/logo.png" alt="Solar Valley Energy" class="h-10 md:h-12 w-auto object-contain">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#home" class="text-gray-700 dark:text-on-surface font-body-md text-body-md hover:text-primary transition-colors duration-200 ease-out">Home</a>
+        <a href="#about" class="text-gray-700 dark:text-on-surface font-body-md text-body-md hover:text-primary transition-colors duration-200 ease-out">About Us</a>
+        <a href="#solutions" class="text-gray-700 dark:text-on-surface font-body-md text-body-md hover:text-primary transition-colors duration-200 ease-out">Solar Solutions</a>
+        <a href="#projects" class="text-gray-700 dark:text-on-surface font-body-md text-body-md hover:text-primary transition-colors duration-200 ease-out">Projects</a>
+        <a href="#contact" class="text-gray-700 dark:text-on-surface font-body-md text-body-md hover:text-primary transition-colors duration-200 ease-out">Contact Us</a>
+      </nav>
+
+      <!-- Right side: Theme Toggle + Hamburger + CTA -->
+      <div class="flex items-center gap-4">
+        <!-- Theme Toggle Button -->
+        <button
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle theme, currently dark mode"
+          class="w-10 h-10 flex items-center justify-center rounded text-gray-700 dark:text-on-surface hover:text-primary transition-colors duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-primary"
+        >
+          <span class="material-symbols-outlined" aria-hidden="true">light_mode</span>
+        </button>
+
+        <!-- Hamburger Menu Button (mobile only) -->
+        <button
+          id="mobile-menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="md:hidden w-10 h-10 flex items-center justify-center rounded text-gray-700 dark:text-on-surface hover:text-primary transition-colors duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-primary"
+        >
+          <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+        </button>
+
+        <!-- GET A QUOTE CTA Button -->
+        <a href="#contact" class="hidden md:inline-flex items-center px-5 py-2 border border-primary text-primary rounded-[4px] font-body-md text-body-md font-medium hover:bg-primary-container hover:text-on-primary-container transition-all duration-200 ease-out">
+          GET A QUOTE
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Dropdown Panel -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden w-full bg-white dark:bg-surface-container border-b border-gray-200 dark:border-outline-variant"
+      role="navigation"
+      aria-label="Mobile navigation"
+    >
+      <nav class="flex flex-col px-6 py-2">
+        <a href="#home" class="min-h-[48px] flex items-center text-gray-700 dark:text-on-surface font-body-md text-body-md hover:text-primary transition-colors duration-200 ease-out">Home</a>
+        <a href="#about" class="min-h-[48px] flex items-center text-gray-700 dark:text-on-surface font-body-md text-body-md hover:text-primary transition-colors duration-200 ease-out">About Us</a>
+        <a href="#solutions" class="min-h-[48px] flex items-center text-gray-700 dark:text-on-surface font-body-md text-body-md hover:text-primary transition-colors duration-200 ease-out">Solar Solutions</a>
+        <a href="#products" class="min-h-[48px] flex items-center text-gray-700 dark:text-on-surface font-body-md text-body-md hover:text-primary transition-colors duration-200 ease-out">Products</a>
+        <a href="#projects" class="min-h-[48px] flex items-center text-gray-700 dark:text-on-surface font-body-md text-body-md hover:text-primary transition-colors duration-200 ease-out">Projects</a>
+        <a href="#care" class="min-h-[48px] flex items-center text-gray-700 dark:text-on-surface font-body-md text-body-md hover:text-primary transition-colors duration-200 ease-out">Care Plan</a>
+        <a href="#contact" class="min-h-[48px] flex items-center text-gray-700 dark:text-on-surface font-body-md text-body-md hover:text-primary transition-colors duration-200 ease-out">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+  <!-- END: Navigation Bar -->
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-[80vh] md:min-h-[90vh] flex items-center mt-16 relative text-white" style="background-image: linear-gradient(to bottom right, rgba(18, 20, 20, 0.85), rgba(18, 20, 20, 0.3)), url('assets/house.png'); background-size: cover; background-position: center;">
+      <div class="max-w-7xl mx-auto px-6 w-full">
+        <div class="max-w-2xl">
+          <!-- Tagline -->
+          <div class="flex items-center gap-4 mb-6">
+            <span class="h-[1px] w-8 bg-primary inline-block"></span>
+            <span class="font-label text-label-caps uppercase text-primary tracking-[0.1em]">POWERING TOMORROW</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="font-display text-[32px] leading-[40px] md:text-display md:leading-[80px] font-[800] tracking-[-0.02em] mb-6">
+            RELIABLE ENERGY.<br>
+            <span class="text-primary">SUSTAINABLE FUTURE.</span>
+          </h1>
+
+          <!-- Subtext -->
+          <p class="font-body-lg text-body-lg text-white/80 max-w-xl mb-8">
+            Solar Valley Energy (Pty) Ltd provides smart, affordable and sustainable solar solutions for homes, businesses and communities.
+          </p>
+
+          <!-- Buttons -->
+          <div class="flex flex-wrap gap-4">
+            <a href="#solutions" class="bg-primary-container text-on-primary-container rounded-lg px-8 py-4 font-bold uppercase text-sm transition-colors duration-200 ease-out active:scale-95 active:transition-transform active:duration-75 active:ease-in inline-block">
+              Our Solutions
+            </a>
+            <a href="#" class="border-2 border-primary text-white rounded-lg px-8 py-4 font-bold uppercase text-sm transition-colors duration-200 ease-out active:scale-95 active:transition-transform active:duration-75 active:ease-in inline-flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Watch Video
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Quick Stats Features Row -->
+    <section class="reveal bg-gray-50 dark:bg-surface-container-lowest border-t border-b border-gray-200 dark:border-outline-variant py-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <!-- Residential Solar -->
+          <div class="reveal-child flex gap-4 items-start">
+            <span class="material-symbols-outlined text-primary-container text-3xl" aria-hidden="true">solar_power</span>
+            <div>
+              <h3 class="font-label text-label-caps uppercase text-[#121414] dark:text-on-surface font-bold mb-1">Residential Solar</h3>
+              <p class="font-body-md text-body-md text-gray-600 dark:text-secondary">Efficient solar for homes, reducing costs.</p>
+            </div>
+          </div>
+          <!-- Commercial Solutions -->
+          <div class="reveal-child flex gap-4 items-start">
+            <span class="material-symbols-outlined text-primary-container text-3xl" aria-hidden="true">apartment</span>
+            <div>
+              <h3 class="font-label text-label-caps uppercase text-[#121414] dark:text-on-surface font-bold mb-1">Commercial Solutions</h3>
+              <p class="font-body-md text-body-md text-gray-600 dark:text-secondary">Scalable energy for businesses of all sizes.</p>
+            </div>
+          </div>
+          <!-- Battery Backup -->
+          <div class="reveal-child flex gap-4 items-start">
+            <span class="material-symbols-outlined text-primary-container text-3xl" aria-hidden="true">battery_charging_full</span>
+            <div>
+              <h3 class="font-label text-label-caps uppercase text-[#121414] dark:text-on-surface font-bold mb-1">Battery Backup</h3>
+              <p class="font-body-md text-body-md text-gray-600 dark:text-secondary">Stay powered during outages and load shedding.</p>
+            </div>
+          </div>
+          <!-- Maintenance & Support -->
+          <div class="reveal-child flex gap-4 items-start">
+            <span class="material-symbols-outlined text-primary-container text-3xl" aria-hidden="true">build</span>
+            <div>
+              <h3 class="font-label text-label-caps uppercase text-[#121414] dark:text-on-surface font-bold mb-1">Maintenance & Support</h3>
+              <p class="font-body-md text-body-md text-gray-600 dark:text-secondary">Expert care to keep systems at peak output.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Quick Stats Features Row End -->
+
+    <!-- About Us Section -->
+    <section id="about" class="reveal py-section-gap-md lg:py-section-gap-lg bg-white dark:bg-surface">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <!-- Left Column: Text Content -->
+          <div class="flex flex-col justify-center">
+            <!-- Section Label with decorative lines -->
+            <div class="flex items-center gap-2 mb-4">
+              <div class="h-[1px] w-8 bg-primary"></div>
+              <span class="font-label text-label-caps uppercase text-primary">ABOUT US</span>
+              <div class="h-[1px] w-8 bg-primary"></div>
+            </div>
+
+            <!-- Headline -->
+            <h2 class="font-headline text-headline-md font-bold uppercase text-gray-900 dark:text-on-surface mb-6">WHO WE ARE</h2>
+
+            <!-- Descriptive Paragraphs -->
+            <p class="font-body-md text-body-md text-gray-600 dark:text-secondary mb-4">
+              Solar Valley Energy (Pty) Ltd is a black-owned renewable energy company dedicated to delivering high-quality solar solutions that empower our clients and communities.
+            </p>
+            <p class="font-body-md text-body-md text-gray-600 dark:text-secondary mb-8">
+              We combine innovation, reliability and integrity to create a brighter and greener future.
+            </p>
+
+            <!-- Learn More Button -->
+            <div>
+              <a href="#about" class="bg-primary-container text-on-primary-container px-8 py-3 rounded-lg font-bold uppercase text-sm inline-block transition-colors duration-200 ease-out active:scale-95 active:transition-transform active:duration-75 active:ease-in">
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Image Grid -->
+          <div class="grid grid-cols-2 gap-4">
+            <!-- Main large image spanning full width -->
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBigzYKBB8J85rZidb33ZF-vYaWC6zUYXUfF-wp7TA2c7Ww4ejCHxmVDphISIr8gFu7OYpjZ2VapS3WRmexZc2wWP-n1aU_QOh9lj7itCrvfHkKgKJO1dGCh7CcvIkaKa8dZsc9AOEwmB7PJKXZEv7b9MIoF85gYyQb5PG7sCDEUxumS6_NVXxdhJF4oZNfMpohjfKWWEkRyiQkYqKV5Hc8SA2ev4b1G6hFRo3JG8CICNOOsK6TLAzSTQpPE6fgtUPlY7884vrFkvdL"
+              alt="Solar Valley Energy team at work on a solar installation project"
+              class="col-span-2 w-full h-64 object-cover rounded-xl"
+            >
+            <!-- Small left image -->
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKcisiBQcmcVS46XOachdXvexpmQqY6nnLemdM2j2fCXdTn8hTWjBQSWVKYVq4Vz80O9djJlKGologrqZxXir8gCyz2EpkpwpRoLAYf3_AaiBPXU046Ye_gdBCKICdR5sjFyTrDUyk1iRCSUSYMKJwfc6BsmFRGSuDl2w_bEbY9iWX_V2gCi9xNVnYjv-Z9lJyYxw2H9R3QrGjljNe8LKry9mM-RlfeSbmsiFbmOJ5ba-iU1euUHyGZiwE8taXGeCuwcEV8NLGZtj4"
+              alt="Residential solar panel installation on a modern home"
+              class="w-full h-40 object-cover rounded-xl"
+            >
+            <!-- Small right image -->
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwQSJz_kY59Cfzk2dlVLsqBwMiZqxl4m8hMPpUTcS07dtBqTd-fAkZXLPZngKRArw-safMta0C4BafyaYcHppDoZb7kWy3zMyrSqAD4ObDy1AdZRXE2WwOtd9_q9xLPKNHUU-jRShxr5Y0BK-nWvhqi3dqjjI6XnfF4cwDipWviIfDRUmCg5OKgiD8sA8VLNYeHzS4RDP9jW58TOBBMml-3iBhxPfiWW25JBknVakx6ut5wIEX05U8jxRQe55K_mxmIhpGU59DoBS2"
+              alt="Commercial solar energy system with battery backup"
+              class="w-full h-40 object-cover rounded-xl"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Us Section End -->
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="reveal py-section-gap-md bg-gray-50 dark:bg-surface">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <div class="h-[1px] w-8 bg-primary"></div>
+            <span class="font-label text-label-caps uppercase text-primary">OUR SOLUTIONS</span>
+            <div class="h-[1px] w-8 bg-primary"></div>
+          </div>
+          <h2 class="font-headline text-headline-md font-bold text-gray-900 dark:text-on-surface">Smart Solar Solutions For Every Need</h2>
+        </div>
+
+        <!-- Solutions Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card: Residential Solar -->
+          <div class="reveal-child group bg-white dark:bg-surface-container border border-gray-200 dark:border-outline-variant rounded-xl overflow-hidden hover:border-primary transition-colors duration-200">
+            <div class="overflow-hidden">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOi4sIhk7oatPMTLLjoUmWjkh2EnoUtIAzo0onnVl-jg9sjSAiC8q9Nd0Q8NIRWAAKKhn34WoXGR1AKfN8Xw-MohK_qQj0FhaV2-5F1KAyROooxOBuc1mv-zKPLiu4wSBfEEUZkYXtAxYNE5NDDtx16ALmQQMcNya29FmOiS3sAnR183AbJj6mcO0o576WPx24ZlIkMIqvqRL8gzyMAOowrygfhIAMaZSWdIMEMxKwaeeePXcKLjDUGGJ_cMbkaX3zpla1o6ZTZq_K"
+                alt="Residential solar panel installation on a modern home"
+                class="w-full aspect-[16/9] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              >
+            </div>
+            <div class="p-6">
+              <div class="w-10 h-10 bg-primary-container/10 text-primary-container flex items-center justify-center rounded-lg mb-4">
+                <span class="material-symbols-outlined" aria-hidden="true">home</span>
+              </div>
+              <h3 class="font-headline text-body-md font-bold uppercase text-gray-900 dark:text-on-surface mb-2">Residential Solar</h3>
+              <p class="font-body-md text-body-md text-gray-600 dark:text-secondary">Efficient solar systems for homes to reduce electricity costs and increase comfort.</p>
+            </div>
+          </div>
+
+          <!-- Card: Commercial Solar -->
+          <div class="reveal-child group bg-white dark:bg-surface-container border border-gray-200 dark:border-outline-variant rounded-xl overflow-hidden hover:border-primary transition-colors duration-200">
+            <div class="overflow-hidden">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxXZkZQliRF0vTYvYIrat9PBv88S8Ghj-nyvrdRkYhgniNkeXTy5gsI_uxcHgwGPdoVcGvmQcYWuwX97OLxbPqDgzQKFOwV27qfpAQq5A4efol2c4RfPzaa-YZpJ-xMhG0EJmg7A-hWwZ7fnyTdVHjvnQ6jX3okvcm0Pu6q1nVCjBFfr2MHCG9gMGwv4-j9Xt7WspyRCJ93ecyCh-b4U3P82skPDa-e3V8zn81rs6GgRbQZYFnht03HknuRwi9vPyO8A-I3fToLGKb"
+                alt="Commercial solar energy system powering a business"
+                class="w-full aspect-[16/9] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              >
+            </div>
+            <div class="p-6">
+              <div class="w-10 h-10 bg-primary-container/10 text-primary-container flex items-center justify-center rounded-lg mb-4">
+                <span class="material-symbols-outlined" aria-hidden="true">apartment</span>
+              </div>
+              <h3 class="font-headline text-body-md font-bold uppercase text-gray-900 dark:text-on-surface mb-2">Commercial Solar</h3>
+              <p class="font-body-md text-body-md text-gray-600 dark:text-secondary">Power your business with reliable and cost-effective solar energy solutions.</p>
+            </div>
+          </div>
+
+          <!-- Card: Backup Power Systems -->
+          <div class="reveal-child group bg-white dark:bg-surface-container border border-gray-200 dark:border-outline-variant rounded-xl overflow-hidden hover:border-primary transition-colors duration-200">
+            <div class="overflow-hidden">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUwt1pgyvt-cui0PXsYf0vx9RP4gJeMw1ucBBjSeGlecm7DqYrD7tpzDL9cCH2151HT8qEmeZYxN9HkzaCLAqaTjm-FK9xxFQ0byCkV2ne4-vZK-X1vscJn0UinnRRCKc3q0E-govGxeH7r_dlDuB6n03_ONT0GdVNN3_fDY1ZdfsES5gDU3Zbr2OyXVaQivpWOtzv-lefqnW3k4FKRu6hNVspEhb9XS-CzeDReXGfF73MY0XHoeTNkeivX9dX9P_CD-pBetl_6UNu"
+                alt="Advanced backup power battery system"
+                class="w-full aspect-[16/9] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              >
+            </div>
+            <div class="p-6">
+              <div class="w-10 h-10 bg-primary-container/10 text-primary-container flex items-center justify-center rounded-lg mb-4">
+                <span class="material-symbols-outlined" aria-hidden="true">bolt</span>
+              </div>
+              <h3 class="font-headline text-body-md font-bold uppercase text-gray-900 dark:text-on-surface mb-2">Backup Power Systems</h3>
+              <p class="font-body-md text-body-md text-gray-600 dark:text-secondary">Stay powered during outages with our advanced backup power solutions.</p>
+            </div>
+          </div>
+
+          <!-- Card: Maintenance & Care -->
+          <div class="reveal-child group bg-white dark:bg-surface-container border border-gray-200 dark:border-outline-variant rounded-xl overflow-hidden hover:border-primary transition-colors duration-200">
+            <div class="overflow-hidden">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9bArinwyUQHIZGZgAoi7tDQTVkTMEnyxKt1HBBJ-nwDuKRgqk7BLxrG4RRp0UPr_Qw1Vn5ZSqo4Eog-3JQSz4ufhxuCWu42uVHLx4hHlQL1J4UZIPkEJdOhEku_K6Ps5B-Nrg6tjWtL1_93gqbTT-IPJ7FV35KhcujaoXYUpFfHkRF6VyumI5b09UIxPUv8dwsRVZoN3XIaz6meYKX_Saa7MgofaRs9oR03xrHUKhbh476oxzEk-59N06A4Ya5rD0TL1kmbuiFjbf"
+                alt="Solar technician performing maintenance on panels"
+                class="w-full aspect-[16/9] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              >
+            </div>
+            <div class="p-6">
+              <div class="w-10 h-10 bg-primary-container/10 text-primary-container flex items-center justify-center rounded-lg mb-4">
+                <span class="material-symbols-outlined" aria-hidden="true">settings</span>
+              </div>
+              <h3 class="font-headline text-body-md font-bold uppercase text-gray-900 dark:text-on-surface mb-2">Maintenance & Care</h3>
+              <p class="font-body-md text-body-md text-gray-600 dark:text-secondary">Our Solar Care Plan ensures your system performs at its best, always.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Solutions Section End -->
+
+    <!-- Projects Section -->
+    <section id="projects" class="reveal py-section-gap-md bg-gray-100 dark:bg-surface-container-lowest">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <div class="h-[1px] w-8 bg-primary"></div>
+            <span class="font-label text-label-caps uppercase text-primary">OUR PROJECTS</span>
+            <div class="h-[1px] w-8 bg-primary"></div>
+          </div>
+          <h2 class="font-headline text-headline-md font-bold uppercase text-gray-900 dark:text-on-surface">Powering Communities</h2>
+        </div>
+
+        <!-- Projects Grid with Navigation -->
+        <div class="relative">
+          <!-- Project Grid -->
+          <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 md:grid md:grid-cols-4 scrollbar-hide scroll-smooth" id="projects-grid">
+            <!-- Project 1: Commercial Installation -->
+            <div class="reveal-child group flex flex-col gap-3 snap-start min-w-[80%] md:min-w-0 flex-shrink-0 md:flex-shrink">
+              <div class="overflow-hidden rounded-xl">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7nc82p2M5j3Uy8PdAKN9WTiYneEsUOPXAbm2QZgSYTB2GU2v0qEcCBd7ML9cnXwPHiZ8tzSfdOE7yTD5tj7N7r4LbunNiak-1x6gVVLQYDZ9YCZVeXBae_y2FH_dQxAXalK-qYzZ1wiYm4f3PSDFw3u5ODZi6EOdIU64vfUvPAoLtbUYcKUGdrnQtDyuZQAZHVdPmU9r1rT8Z37qBDkrWQSF05vB3P7H1MRRSmpxLO8FiKjE3Piww0OJX04jZHCvS4VBRSAfRsz6-"
+                  alt="Commercial solar installation project"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                >
+              </div>
+              <span class="font-label text-label-caps uppercase text-gray-600 dark:text-secondary tracking-widest">Commercial Installation</span>
+            </div>
+
+            <!-- Project 2: Residential Installation -->
+            <div class="reveal-child group flex flex-col gap-3 snap-start min-w-[80%] md:min-w-0 flex-shrink-0 md:flex-shrink">
+              <div class="overflow-hidden rounded-xl">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvwKPOTl7Zg6KUjlSv9KEdmkFiwM8AXdv8xV6Va0X3h61HYjH-RquZtvAfb0a6pJSCDexkthBaPfO_DXr5efP1ysEO5Fy97lA8oxz2IShiWYcMpSUDmf2zGZXGn1QnI1pRS4FN5-rBxzrkEvUOVedHemrhmUWhDroT-MxrBPAX__hiqjySUD5qdDhLi_bNZg5iac83lKpQ7_bc01RgsgOLsEse1fz50NmcPitLGkTk7CjHHCLq_JTZqgE3woTv_cYsI0PpUuwK5g0E"
+                  alt="Residential solar panel installation"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                >
+              </div>
+              <span class="font-label text-label-caps uppercase text-gray-600 dark:text-secondary tracking-widest">Residential Installation</span>
+            </div>
+
+            <!-- Project 3: Backup Power System -->
+            <div class="reveal-child group flex flex-col gap-3 snap-start min-w-[80%] md:min-w-0 flex-shrink-0 md:flex-shrink">
+              <div class="overflow-hidden rounded-xl">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc1L-WbFaYZ2v0uxAy6pOQ4OjqRN7UNgEnrdA7UaHloCQ3WROeQsrHlT-zmHVWNZoghnUBImJ6A3nsZyoLRFuKcVVThRGsQH-zSlgX-BDd836mpGogK1u2HdJRFlp-JJQsZbaz9wyNRAPqWxBPK_WUT31Jyn1KjgKoHehzUfrS8NmbVjIPHhNPUx-jAcw2YC94gtA6zq0EELaU04F9-dxLgAKV_tVhhU6_67zFVQ9G8jLbhpG8mJpXgHH9s4oMu1GLK_jXr-u-K4qV"
+                  alt="Backup power system installation"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                >
+              </div>
+              <span class="font-label text-label-caps uppercase text-gray-600 dark:text-secondary tracking-widest">Backup Power System</span>
+            </div>
+
+            <!-- Project 4: Community Project -->
+            <div class="reveal-child group flex flex-col gap-3 snap-start min-w-[80%] md:min-w-0 flex-shrink-0 md:flex-shrink">
+              <div class="overflow-hidden rounded-xl">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-sG7iT9fcJUcz_VL7HRPDdGl4KaXQy8JeL8AEYi0Z40XGCDh8BhUPXL8JIPTcgwT0pp17ogV5XxHBWNa0VLctzJkbcmLMSmqz34oj6tHJO6fUvtVmIT7mQeQtaXiFvvPaJ1Djrc_AXrKjLnz-1JzYjNFeyS077mF6mQC8wESvqrl8z6Z6L56HxRtzGR-8YA93CCy0HVyE2AcaqJ02SllOPysacEtabLuM_WzRxCJFjxupzNTOd2GGihSrjq4ryh72p30SO0hcJlNp"
+                  alt="Community solar energy project"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                >
+              </div>
+              <span class="font-label text-label-caps uppercase text-gray-600 dark:text-secondary tracking-widest">Community Project</span>
+            </div>
+          </div>
+
+          <!-- Navigation Arrows -->
+          <div class="flex justify-center gap-4 mt-8">
+            <button aria-label="Previous projects" class="w-10 h-10 rounded-full border border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary-container transition-colors duration-200 ease-out">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <button aria-label="Next projects" class="w-10 h-10 rounded-full border border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary-container transition-colors duration-200 ease-out">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Section End -->
+
+    <!-- CTA Section -->
+    <section class="reveal bg-gray-50 dark:bg-surface-container-low py-section-gap-lg">
+      <div class="max-w-[1280px] mx-auto px-6 text-center">
+        <div class="max-w-xl mx-auto">
+          <!-- Headline -->
+          <h2 class="font-headline text-headline-lg font-bold text-gray-900 dark:text-on-surface mb-4">Ready to Power Your Future?</h2>
+
+          <!-- Body Paragraph -->
+          <p class="font-body-lg text-body-lg text-gray-600 dark:text-secondary mb-8">Join hundreds of South African communities already benefiting from Solar Valley's engineering excellence.</p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#contact" class="w-full sm:w-auto bg-primary-container text-on-primary-container px-10 py-4 rounded-lg font-bold text-lg transition-colors duration-200 ease-out hover:bg-primary hover:text-on-primary-container focus:outline-none focus:ring-2 focus:ring-primary active:scale-95 active:transition-transform active:duration-75 active:ease-in inline-block text-center">
+              Request a Custom Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section End -->
+  </main>
+
+  <!-- BEGIN: Footer -->
+  <footer id="contact" class="reveal bg-gray-100 dark:bg-surface-container-lowest border-t border-gray-200 dark:border-outline-variant pt-section-gap-md pb-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <!-- Brand Column -->
+        <div>
+          <img src="Inspiration/logo.png" alt="Solar Valley Energy" class="h-16 w-auto object-contain mb-6">
+          <p class="text-gray-600 dark:text-secondary text-sm">Solar Solutions · Backup Power · Energy Freedom</p>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div>
+          <h4 class="font-label text-label-caps text-primary mb-6 uppercase">Quick Links</h4>
+          <ul class="space-y-4">
+            <li><a href="#home" class="text-gray-600 dark:text-secondary hover:text-primary transition-colors duration-200 ease-out">Home</a></li>
+            <li><a href="#about" class="text-gray-600 dark:text-secondary hover:text-primary transition-colors duration-200 ease-out">About Us</a></li>
+            <li><a href="#solutions" class="text-gray-600 dark:text-secondary hover:text-primary transition-colors duration-200 ease-out">Solar Solutions</a></li>
+            <li><a href="#products" class="text-gray-600 dark:text-secondary hover:text-primary transition-colors duration-200 ease-out">Products</a></li>
+            <li><a href="#projects" class="text-gray-600 dark:text-secondary hover:text-primary transition-colors duration-200 ease-out">Projects</a></li>
+            <li><a href="#care" class="text-gray-600 dark:text-secondary hover:text-primary transition-colors duration-200 ease-out">Care Plan</a></li>
+            <li><a href="#contact" class="text-gray-600 dark:text-secondary hover:text-primary transition-colors duration-200 ease-out">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div>
+          <h4 class="font-label text-label-caps text-primary mb-6 uppercase">Contact Us</h4>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary" aria-hidden="true">call</span>
+              <span class="text-gray-600 dark:text-secondary">+27 11 123 4567</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary" aria-hidden="true">mail</span>
+              <span class="text-gray-600 dark:text-secondary">info@solarvalleyenergy.co.za</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary" aria-hidden="true">location_on</span>
+              <span class="text-gray-600 dark:text-secondary">Johannesburg, South Africa</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary" aria-hidden="true">language</span>
+              <span class="text-gray-600 dark:text-secondary">www.solarvalleyenergy.co.za</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social/CTA Column -->
+        <div>
+          <h4 class="font-label text-label-caps text-primary mb-6 uppercase">Follow Us</h4>
+          <div class="flex gap-4 mb-10">
+            <!-- Facebook -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-gray-200 dark:border-outline-variant flex items-center justify-center rounded-lg text-primary hover:bg-primary hover:text-on-primary-container transition-all duration-200">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H6v4h3v10h4V12h3l1-4h-4V6.5a1 1 0 011-1h3V1H13a5 5 0 00-5 5V8z"></path></svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-gray-200 dark:border-outline-variant flex items-center justify-center rounded-lg text-primary hover:bg-primary hover:text-on-primary-container transition-all duration-200">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.315 2c2.43 0 2.784.01 3.71.054 1.14.044 1.918.27 2.616.54.713.276 1.32.656 1.922 1.257.6.6.98 1.209 1.256 1.922.27.698.496 1.476.54 2.616.044.926.054 1.28.054 3.71s-.01 2.784-.054 3.71c-.044 1.14-.27 1.918-.54 2.616-.276.713-.656 1.32-1.257 1.922-.6.6-1.209.98-1.922 1.256-.698.27-1.476.496-2.616.54-.926.044-1.28.054-3.71.054s-2.784-.01-3.71-.054c-1.14-.044-1.918-.27-2.616-.54-.713-.276-1.32-.656-1.922-1.257-.6-.6-.98-1.209-1.256-1.922-.27-.698-.496-1.476-.54-2.616-.044-.926-.054-1.28-.054-3.71s.01-2.784.054-3.71c.044-1.14.27-1.918.54-2.616.276-.713.656-1.32 1.257-1.922.6-.6 1.209-.98 1.922-1.256.698-.27 1.476-.496 2.616-.54.926-.044 1.28-.054 3.71-.054zM12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 1.802a3.333 3.333 0 110 6.666 3.333 3.333 0 010-6.666zm5.338-3.205a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"></path></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-gray-200 dark:border-outline-variant flex items-center justify-center rounded-lg text-primary hover:bg-primary hover:text-on-primary-container transition-all duration-200">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+            </a>
+          </div>
+          <!-- GET A QUOTE Ghost Button -->
+          <a href="#contact" class="block w-full border border-primary text-primary px-6 py-2 rounded-lg font-bold text-sm text-center hover:bg-primary hover:text-on-primary-container transition-all duration-200">
+            GET A QUOTE
+          </a>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="border-t border-gray-200 dark:border-outline-variant mt-12 pt-6 text-center text-xs text-gray-500 dark:text-secondary/60 font-label uppercase tracking-widest">
+        © 2025 Solar Valley Energy (Pty) Ltd. All Rights Reserved. | Powered by Clean Energy. Driven by Purpose.
+      </div>
+    </div>
+  </footer>
+  <!-- END: Footer -->
+
+  <!-- Theme Toggle Script -->
+  <script>
+    (function() {
+      const toggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+      const icon = toggle.querySelector('.material-symbols-outlined');
+
+      function updateToggle() {
+        const isDark = html.classList.contains('dark');
+        icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+        toggle.setAttribute('aria-label', 'Toggle theme, currently ' + (isDark ? 'dark' : 'light') + ' mode');
+      }
+
+      toggle.addEventListener('click', function() {
+        html.classList.toggle('dark');
+        const theme = html.classList.contains('dark') ? 'dark' : 'light';
+        try {
+          localStorage.setItem('sv-theme', theme);
+        } catch(e) {}
+        updateToggle();
+      });
+
+      // Restore theme from localStorage
+      try {
+        const saved = localStorage.getItem('sv-theme');
+        if (saved === 'light') {
+          html.classList.remove('dark');
+        } else if (saved === 'dark') {
+          html.classList.add('dark');
+        } else {
+          // Invalid or missing value — default to dark
+          html.classList.add('dark');
+        }
+      } catch(e) {
+        // localStorage unavailable (e.g. private browsing) — default to dark
+        html.classList.add('dark');
+      }
+      updateToggle();
+    })();
+  </script>
+
+  <!-- Scroll blur effect script -->
+  <script>
+    (function() {
+      const nav = document.getElementById('main-nav');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          nav.classList.add('nav-blur');
+        } else {
+          nav.classList.remove('nav-blur');
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+  <!-- Mobile menu toggle script -->
+  <script>
+    (function() {
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (!toggleBtn || !mobileMenu) return;
+
+      toggleBtn.addEventListener('click', function() {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        if (isOpen) {
+          mobileMenu.classList.add('hidden');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          toggleBtn.setAttribute('aria-label', 'Open navigation menu');
+        } else {
+          mobileMenu.classList.remove('hidden');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          toggleBtn.setAttribute('aria-label', 'Close navigation menu');
+        }
+      });
+
+      // Close menu when a nav link is clicked
+      var links = mobileMenu.querySelectorAll('a');
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          toggleBtn.setAttribute('aria-label', 'Open navigation menu');
+        });
+      }
+    })();
+  </script>
+
+  <!-- Project carousel arrow navigation script -->
+  <script>
+    (function() {
+      var grid = document.getElementById('projects-grid');
+      var prevBtn = document.querySelector('[aria-label="Previous projects"]');
+      var nextBtn = document.querySelector('[aria-label="Next projects"]');
+
+      if (!grid || !prevBtn || !nextBtn) return;
+
+      function updateArrowStates() {
+        var scrollLeft = grid.scrollLeft;
+        var maxScroll = grid.scrollWidth - grid.clientWidth;
+
+        // Disable previous at start
+        if (scrollLeft <= 0) {
+          prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+          prevBtn.setAttribute('aria-disabled', 'true');
+        } else {
+          prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+          prevBtn.removeAttribute('aria-disabled');
+        }
+
+        // Disable next at end
+        if (scrollLeft >= maxScroll - 1) {
+          nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+          nextBtn.setAttribute('aria-disabled', 'true');
+        } else {
+          nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+          nextBtn.removeAttribute('aria-disabled');
+        }
+      }
+
+      function getScrollAmount() {
+        var firstChild = grid.children[0];
+        if (!firstChild) return 300;
+        return firstChild.offsetWidth + 16; // item width + gap
+      }
+
+      prevBtn.addEventListener('click', function() {
+        if (prevBtn.getAttribute('aria-disabled') === 'true') return;
+        grid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', function() {
+        if (nextBtn.getAttribute('aria-disabled') === 'true') return;
+        grid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+      });
+
+      grid.addEventListener('scroll', updateArrowStates, { passive: true });
+      window.addEventListener('resize', updateArrowStates);
+
+      // Initial state
+      updateArrowStates();
+    })();
+  </script>
+
+  <!-- Smooth scroll active link highlighting script -->
+  <script>
+    (function() {
+      // Select all sections with IDs that correspond to nav links
+      var sections = document.querySelectorAll('section[id]');
+      // Select desktop nav links
+      var navLinks = document.querySelectorAll('nav.hidden.md\\:flex a');
+
+      if (!sections.length || !navLinks.length) return;
+
+      // Active class list
+      var activeClasses = ['border-b-2', 'border-primary-container', '!text-primary'];
+
+      function clearActiveLinks() {
+        navLinks.forEach(function(link) {
+          activeClasses.forEach(function(cls) {
+            link.classList.remove(cls);
+          });
+        });
+      }
+
+      function setActiveLink(sectionId) {
+        clearActiveLinks();
+        navLinks.forEach(function(link) {
+          var href = link.getAttribute('href');
+          if (href === '#' + sectionId) {
+            activeClasses.forEach(function(cls) {
+              link.classList.add(cls);
+            });
+          }
+        });
+      }
+
+      // Create IntersectionObserver with rootMargin accounting for fixed nav
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            setActiveLink(entry.target.id);
+          }
+        });
+      }, {
+        rootMargin: '-80px 0px -50% 0px',
+        threshold: 0
+      });
+
+      // Observe all sections
+      sections.forEach(function(section) {
+        observer.observe(section);
+      });
+    })();
+  </script>
+
+  <!-- Section reveal on scroll -->
+  <script>
+    (function() {
+      var revealElements = document.querySelectorAll('.reveal');
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+
+            // Stagger children animations
+            var children = entry.target.querySelectorAll('.reveal-child');
+            children.forEach(function(child, index) {
+              setTimeout(function() {
+                child.classList.add('active');
+              }, index * 120);
+            });
+
+            // Unobserve after revealing (only animate once)
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+  <!-- Simple parallax on hero background -->
+  <script>
+    (function() {
+      var hero = document.getElementById('home');
+      if (!hero) return;
+
+      window.addEventListener('scroll', function() {
+        var scrolled = window.scrollY;
+        var heroHeight = hero.offsetHeight + hero.offsetTop;
+
+        if (scrolled < heroHeight) {
+          hero.style.backgroundPositionY = (scrolled * 0.4) + 'px';
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
