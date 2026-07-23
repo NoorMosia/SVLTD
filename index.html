@@ -5,6 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solar Valley Energy | Reliable Energy. Sustainable Future.</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Inspiration/logo.png">
+  <link rel="apple-touch-icon" href="Inspiration/logo.png">
+
+  <!-- SEO Meta Description -->
+  <meta name="description" content="Solar Valley Energy (Pty) Ltd provides smart, affordable and sustainable solar solutions for homes, businesses and communities in South Africa.">
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Solar Valley Energy | Reliable Energy. Sustainable Future.">
+  <meta property="og:description" content="Smart, affordable and sustainable solar solutions for homes, businesses and communities in South Africa.">
+  <meta property="og:image" content="assets/house.png">
+  <meta property="og:url" content="https://www.solarvalleyenergy.co.za">
+  <meta property="og:site_name" content="Solar Valley Energy">
+  <meta property="og:locale" content="en_ZA">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Solar Valley Energy | Reliable Energy. Sustainable Future.">
+  <meta name="twitter:description" content="Smart, affordable and sustainable solar solutions for homes, businesses and communities in South Africa.">
+  <meta name="twitter:image" content="assets/house.png">
+
+  <!-- Additional social/app meta -->
+  <meta name="theme-color" content="#121414">
+  <meta name="msapplication-TileColor" content="#121414">
+
   <!-- Google Fonts: Hanken Grotesk (300-800), Manrope (400, 500), JetBrains Mono (500) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,8 +66,8 @@
               container: '#f4b63f',
             },
             'on-primary': {
-              DEFAULT: '#422c00',
-              container: '#694900',
+              DEFAULT: '#1e1e1e',
+              container: '#1e1e1e',
             },
             secondary: {
               DEFAULT: '#c8c6c5',
@@ -113,6 +139,17 @@
     .scrollbar-hide {
       -ms-overflow-style: none;
       scrollbar-width: none;
+    }
+
+    /* Light mode: accent text uses darker gold for readability */
+    html:not(.dark) .text-primary {
+      color: #694900 !important;
+    }
+    html:not(.dark) .hover\:text-primary:hover {
+      color: #694900 !important;
+    }
+    html:not(.dark) .\!text-primary {
+      color: #694900 !important;
     }
 
     /* Section reveal animations */
@@ -218,13 +255,13 @@
           <!-- Tagline -->
           <div class="flex items-center gap-4 mb-6">
             <span class="h-[1px] w-8 bg-primary inline-block"></span>
-            <span class="font-label text-label-caps uppercase text-primary tracking-[0.1em]">POWERING TOMORROW</span>
+            <span class="font-label text-label-caps uppercase text-[#ffd795] tracking-[0.1em]">POWERING TOMORROW</span>
           </div>
 
           <!-- Headline -->
           <h1 class="font-display text-[32px] leading-[40px] md:text-display md:leading-[80px] font-[800] tracking-[-0.02em] mb-6">
             RELIABLE ENERGY.<br>
-            <span class="text-primary">SUSTAINABLE FUTURE.</span>
+            <span class="text-[#ffd795]">SUSTAINABLE FUTURE.</span>
           </h1>
 
           <!-- Subtext -->
