@@ -224,9 +224,9 @@
         </button>
 
         <!-- GET A QUOTE CTA Button -->
-        <a href="#contact" class="hidden md:inline-flex items-center px-5 py-2 border border-primary text-primary rounded-[4px] font-body-md text-body-md font-medium hover:bg-primary-container hover:text-on-primary-container transition-all duration-200 ease-out">
+        <button type="button" onclick="openQuoteModal()" class="hidden md:inline-flex items-center px-5 py-2 border border-primary text-primary rounded-[4px] font-body-md text-body-md font-medium hover:bg-primary-container hover:text-on-primary-container transition-all duration-200 ease-out">
           GET A QUOTE
-        </a>
+        </button>
       </div>
     </div>
 
@@ -486,71 +486,50 @@
           <h2 class="font-headline text-headline-md font-bold uppercase text-gray-900 dark:text-on-surface">Powering Communities</h2>
         </div>
 
-        <!-- Projects Grid with Navigation -->
-        <div class="relative">
-          <!-- Project Grid -->
-          <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 md:grid md:grid-cols-4 scrollbar-hide scroll-smooth" id="projects-grid">
-            <!-- Project 1: Commercial Installation -->
-            <div class="reveal-child group flex flex-col gap-3 snap-start min-w-[80%] md:min-w-0 flex-shrink-0 md:flex-shrink">
-              <div class="overflow-hidden rounded-xl">
-                <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7nc82p2M5j3Uy8PdAKN9WTiYneEsUOPXAbm2QZgSYTB2GU2v0qEcCBd7ML9cnXwPHiZ8tzSfdOE7yTD5tj7N7r4LbunNiak-1x6gVVLQYDZ9YCZVeXBae_y2FH_dQxAXalK-qYzZ1wiYm4f3PSDFw3u5ODZi6EOdIU64vfUvPAoLtbUYcKUGdrnQtDyuZQAZHVdPmU9r1rT8Z37qBDkrWQSF05vB3P7H1MRRSmpxLO8FiKjE3Piww0OJX04jZHCvS4VBRSAfRsz6-"
-                  alt="Commercial solar installation project"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                >
-              </div>
-              <span class="font-label text-label-caps uppercase text-gray-600 dark:text-secondary tracking-widest">Commercial Installation</span>
-            </div>
-
-            <!-- Project 2: Residential Installation -->
-            <div class="reveal-child group flex flex-col gap-3 snap-start min-w-[80%] md:min-w-0 flex-shrink-0 md:flex-shrink">
-              <div class="overflow-hidden rounded-xl">
-                <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvwKPOTl7Zg6KUjlSv9KEdmkFiwM8AXdv8xV6Va0X3h61HYjH-RquZtvAfb0a6pJSCDexkthBaPfO_DXr5efP1ysEO5Fy97lA8oxz2IShiWYcMpSUDmf2zGZXGn1QnI1pRS4FN5-rBxzrkEvUOVedHemrhmUWhDroT-MxrBPAX__hiqjySUD5qdDhLi_bNZg5iac83lKpQ7_bc01RgsgOLsEse1fz50NmcPitLGkTk7CjHHCLq_JTZqgE3woTv_cYsI0PpUuwK5g0E"
-                  alt="Residential solar panel installation"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                >
-              </div>
-              <span class="font-label text-label-caps uppercase text-gray-600 dark:text-secondary tracking-widest">Residential Installation</span>
-            </div>
-
-            <!-- Project 3: Backup Power System -->
-            <div class="reveal-child group flex flex-col gap-3 snap-start min-w-[80%] md:min-w-0 flex-shrink-0 md:flex-shrink">
-              <div class="overflow-hidden rounded-xl">
-                <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc1L-WbFaYZ2v0uxAy6pOQ4OjqRN7UNgEnrdA7UaHloCQ3WROeQsrHlT-zmHVWNZoghnUBImJ6A3nsZyoLRFuKcVVThRGsQH-zSlgX-BDd836mpGogK1u2HdJRFlp-JJQsZbaz9wyNRAPqWxBPK_WUT31Jyn1KjgKoHehzUfrS8NmbVjIPHhNPUx-jAcw2YC94gtA6zq0EELaU04F9-dxLgAKV_tVhhU6_67zFVQ9G8jLbhpG8mJpXgHH9s4oMu1GLK_jXr-u-K4qV"
-                  alt="Backup power system installation"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                >
-              </div>
-              <span class="font-label text-label-caps uppercase text-gray-600 dark:text-secondary tracking-widest">Backup Power System</span>
-            </div>
-
-            <!-- Project 4: Community Project -->
-            <div class="reveal-child group flex flex-col gap-3 snap-start min-w-[80%] md:min-w-0 flex-shrink-0 md:flex-shrink">
-              <div class="overflow-hidden rounded-xl">
-                <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-sG7iT9fcJUcz_VL7HRPDdGl4KaXQy8JeL8AEYi0Z40XGCDh8BhUPXL8JIPTcgwT0pp17ogV5XxHBWNa0VLctzJkbcmLMSmqz34oj6tHJO6fUvtVmIT7mQeQtaXiFvvPaJ1Djrc_AXrKjLnz-1JzYjNFeyS077mF6mQC8wESvqrl8z6Z6L56HxRtzGR-8YA93CCy0HVyE2AcaqJ02SllOPysacEtabLuM_WzRxCJFjxupzNTOd2GGihSrjq4ryh72p30SO0hcJlNp"
-                  alt="Community solar energy project"
-                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                >
-              </div>
-              <span class="font-label text-label-caps uppercase text-gray-600 dark:text-secondary tracking-widest">Community Project</span>
-            </div>
+        <!-- Community Image Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Homes -->
+          <div class="reveal-child group relative overflow-hidden rounded-xl aspect-[4/3]">
+            <img
+              src="assets/homes.jpg"
+              alt="Solar powered homes"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <span class="absolute bottom-4 left-4 font-headline text-body-lg font-bold uppercase text-white tracking-wide">Homes</span>
           </div>
 
-          <!-- Navigation Arrows -->
-          <div class="flex justify-center gap-4 mt-8">
-            <button aria-label="Previous projects" class="w-10 h-10 rounded-full border border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary-container transition-colors duration-200 ease-out">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </button>
-            <button aria-label="Next projects" class="w-10 h-10 rounded-full border border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary-container transition-colors duration-200 ease-out">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
+          <!-- Libraries -->
+          <div class="reveal-child group relative overflow-hidden rounded-xl aspect-[4/3]">
+            <img
+              src="assets/libraries.jpg"
+              alt="Solar powered libraries"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <span class="absolute bottom-4 left-4 font-headline text-body-lg font-bold uppercase text-white tracking-wide">Libraries</span>
+          </div>
+
+          <!-- Schools -->
+          <div class="reveal-child group relative overflow-hidden rounded-xl aspect-[4/3]">
+            <img
+              src="assets/schools.jpg"
+              alt="Solar powered schools"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <span class="absolute bottom-4 left-4 font-headline text-body-lg font-bold uppercase text-white tracking-wide">Schools</span>
+          </div>
+
+          <!-- Shops -->
+          <div class="reveal-child group relative overflow-hidden rounded-xl aspect-[4/3]">
+            <img
+              src="assets/shops.jpg"
+              alt="Solar powered shops"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <span class="absolute bottom-4 left-4 font-headline text-body-lg font-bold uppercase text-white tracking-wide">Shops</span>
           </div>
         </div>
       </div>
@@ -569,9 +548,9 @@
 
           <!-- Action Buttons -->
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#contact" class="w-full sm:w-auto bg-primary-container text-on-primary-container px-10 py-4 rounded-lg font-bold text-lg transition-colors duration-200 ease-out hover:bg-primary hover:text-on-primary-container focus:outline-none focus:ring-2 focus:ring-primary active:scale-95 active:transition-transform active:duration-75 active:ease-in inline-block text-center">
+            <button type="button" onclick="openQuoteModal()" class="w-full sm:w-auto bg-primary-container text-on-primary-container px-10 py-4 rounded-lg font-bold text-lg transition-colors duration-200 ease-out hover:bg-primary hover:text-on-primary-container focus:outline-none focus:ring-2 focus:ring-primary active:scale-95 active:transition-transform active:duration-75 active:ease-in inline-block text-center">
               Request a Custom Quote
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -644,9 +623,9 @@
             </a>
           </div>
           <!-- GET A QUOTE Ghost Button -->
-          <a href="#contact" class="block w-full border border-primary text-primary px-6 py-2 rounded-lg font-bold text-sm text-center hover:bg-primary hover:text-on-primary-container transition-all duration-200">
+          <button type="button" onclick="openQuoteModal()" class="block w-full border border-primary text-primary px-6 py-2 rounded-lg font-bold text-sm text-center hover:bg-primary hover:text-on-primary-container transition-all duration-200">
             GET A QUOTE
-          </a>
+          </button>
         </div>
       </div>
 
@@ -657,6 +636,85 @@
     </div>
   </footer>
   <!-- END: Footer -->
+
+  <!-- Quote Modal -->
+  <div id="quote-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
+    <!-- Backdrop -->
+    <div id="quote-modal-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+    <!-- Modal Content -->
+    <div class="relative bg-white dark:bg-surface-container border border-gray-200 dark:border-outline-variant rounded-xl w-[90%] max-w-md mx-auto p-8 shadow-2xl">
+      <!-- Close Button -->
+      <button id="quote-modal-close" type="button" aria-label="Close quote form" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded text-gray-500 dark:text-secondary hover:text-gray-900 dark:hover:text-on-surface transition-colors">
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
+
+      <!-- Form State -->
+      <div id="quote-form-container">
+        <h3 class="font-headline text-headline-md font-bold text-gray-900 dark:text-on-surface mb-2">Get a Quote</h3>
+        <p class="font-body-md text-body-md text-gray-600 dark:text-secondary mb-6">Leave your details and we'll contact you with a custom solar solution quote.</p>
+
+        <form id="quote-form" class="space-y-4" novalidate>
+          <!-- Email -->
+          <div>
+            <label for="quote-email" class="block font-label text-label-caps uppercase text-gray-700 dark:text-secondary mb-2">Email Address</label>
+            <input
+              type="email"
+              id="quote-email"
+              name="email"
+              required
+              placeholder="you@example.com"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-outline-variant bg-white dark:bg-surface-container-low text-gray-900 dark:text-on-surface placeholder-gray-400 dark:placeholder-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+            >
+            <p id="quote-email-error" class="hidden text-error text-sm mt-1">Please enter a valid email address.</p>
+          </div>
+
+          <!-- Phone Number -->
+          <div>
+            <label for="quote-phone" class="block font-label text-label-caps uppercase text-gray-700 dark:text-secondary mb-2">Phone Number</label>
+            <div class="flex">
+              <span class="inline-flex items-center px-4 py-3 rounded-l-lg border border-r-0 border-gray-300 dark:border-outline-variant bg-gray-100 dark:bg-surface-container-high text-gray-700 dark:text-secondary font-label text-sm">+27</span>
+              <input
+                type="tel"
+                id="quote-phone"
+                name="phone"
+                required
+                placeholder="81 234 5678"
+                maxlength="11"
+                class="w-full px-4 py-3 rounded-r-lg border border-gray-300 dark:border-outline-variant bg-white dark:bg-surface-container-low text-gray-900 dark:text-on-surface placeholder-gray-400 dark:placeholder-secondary/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+              >
+            </div>
+            <p id="quote-phone-error" class="hidden text-error text-sm mt-1">Please enter a valid South African phone number (9 digits).</p>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            id="quote-submit-btn"
+            class="w-full bg-primary-container text-on-primary-container px-8 py-3 rounded-lg font-bold uppercase text-sm transition-all duration-200 ease-out hover:bg-primary active:scale-95 active:transition-transform active:duration-75 active:ease-in flex items-center justify-center gap-2"
+          >
+            <span id="quote-submit-text">Submit</span>
+            <!-- Spinner (hidden by default) -->
+            <svg id="quote-spinner" class="hidden animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- Success State (hidden by default) -->
+      <div id="quote-success" class="hidden text-center py-6">
+        <span class="material-symbols-outlined text-primary-container text-5xl mb-4" aria-hidden="true">check_circle</span>
+        <h3 class="font-headline text-headline-md font-bold text-gray-900 dark:text-on-surface mb-2">Thank You!</h3>
+        <p class="font-body-md text-body-md text-gray-600 dark:text-secondary mb-6">Your information has been submitted. We'll be in touch soon.</p>
+        <button id="quote-success-close" type="button" class="border border-primary text-primary px-8 py-3 rounded-lg font-bold uppercase text-sm hover:bg-primary hover:text-on-primary-container transition-all duration-200">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Quote Modal End -->
 
   <!-- Theme Toggle Script -->
   <script>
@@ -746,61 +804,6 @@
     })();
   </script>
 
-  <!-- Project carousel arrow navigation script -->
-  <script>
-    (function() {
-      var grid = document.getElementById('projects-grid');
-      var prevBtn = document.querySelector('[aria-label="Previous projects"]');
-      var nextBtn = document.querySelector('[aria-label="Next projects"]');
-
-      if (!grid || !prevBtn || !nextBtn) return;
-
-      function updateArrowStates() {
-        var scrollLeft = grid.scrollLeft;
-        var maxScroll = grid.scrollWidth - grid.clientWidth;
-
-        // Disable previous at start
-        if (scrollLeft <= 0) {
-          prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
-          prevBtn.setAttribute('aria-disabled', 'true');
-        } else {
-          prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-          prevBtn.removeAttribute('aria-disabled');
-        }
-
-        // Disable next at end
-        if (scrollLeft >= maxScroll - 1) {
-          nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
-          nextBtn.setAttribute('aria-disabled', 'true');
-        } else {
-          nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-          nextBtn.removeAttribute('aria-disabled');
-        }
-      }
-
-      function getScrollAmount() {
-        var firstChild = grid.children[0];
-        if (!firstChild) return 300;
-        return firstChild.offsetWidth + 16; // item width + gap
-      }
-
-      prevBtn.addEventListener('click', function() {
-        if (prevBtn.getAttribute('aria-disabled') === 'true') return;
-        grid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-      });
-
-      nextBtn.addEventListener('click', function() {
-        if (nextBtn.getAttribute('aria-disabled') === 'true') return;
-        grid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-      });
-
-      grid.addEventListener('scroll', updateArrowStates, { passive: true });
-      window.addEventListener('resize', updateArrowStates);
-
-      // Initial state
-      updateArrowStates();
-    })();
-  </script>
 
   <!-- Smooth scroll active link highlighting script -->
   <script>
@@ -901,6 +904,115 @@
           hero.style.backgroundPositionY = (scrolled * 0.4) + 'px';
         }
       }, { passive: true });
+    })();
+  </script>
+
+  <!-- Quote Modal Script -->
+  <script>
+    (function() {
+      var modal = document.getElementById('quote-modal');
+      var backdrop = document.getElementById('quote-modal-backdrop');
+      var closeBtn = document.getElementById('quote-modal-close');
+      var form = document.getElementById('quote-form');
+      var formContainer = document.getElementById('quote-form-container');
+      var successContainer = document.getElementById('quote-success');
+      var successCloseBtn = document.getElementById('quote-success-close');
+      var submitBtn = document.getElementById('quote-submit-btn');
+      var submitText = document.getElementById('quote-submit-text');
+      var spinner = document.getElementById('quote-spinner');
+      var emailInput = document.getElementById('quote-email');
+      var phoneInput = document.getElementById('quote-phone');
+      var emailError = document.getElementById('quote-email-error');
+      var phoneError = document.getElementById('quote-phone-error');
+
+      // Open modal
+      window.openQuoteModal = function() {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        // Reset to form state
+        formContainer.classList.remove('hidden');
+        successContainer.classList.add('hidden');
+        form.reset();
+        emailError.classList.add('hidden');
+        phoneError.classList.add('hidden');
+      };
+
+      // Close modal
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+      successCloseBtn.addEventListener('click', closeModal);
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      // Validate email
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      // Validate SA phone number (9 digits after +27)
+      function isValidSAPhone(phone) {
+        var cleaned = phone.replace(/[\s\-()]/g, '');
+        return /^\d{9}$/.test(cleaned);
+      }
+
+      // Only allow digits, spaces, and dashes in phone input
+      phoneInput.addEventListener('input', function() {
+        this.value = this.value.replace(/[^0-9\s\-]/g, '');
+      });
+
+      // Form submission
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var valid = true;
+
+        // Validate email
+        if (!isValidEmail(emailInput.value.trim())) {
+          emailError.classList.remove('hidden');
+          valid = false;
+        } else {
+          emailError.classList.add('hidden');
+        }
+
+        // Validate phone
+        if (!isValidSAPhone(phoneInput.value)) {
+          phoneError.classList.remove('hidden');
+          valid = false;
+        } else {
+          phoneError.classList.add('hidden');
+        }
+
+        if (!valid) return;
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitText.textContent = 'Submitting...';
+        spinner.classList.remove('hidden');
+
+        // Simulate submission delay
+        setTimeout(function() {
+          // Reset button state
+          submitBtn.disabled = false;
+          submitText.textContent = 'Submit';
+          spinner.classList.add('hidden');
+
+          // Show success
+          formContainer.classList.add('hidden');
+          successContainer.classList.remove('hidden');
+        }, 1500);
+      });
     })();
   </script>
 
