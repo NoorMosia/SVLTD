@@ -119,9 +119,7 @@
 
   <!-- Custom Styles -->
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    /* Smooth scrolling handled via JS to avoid file:// security origin issues */
 
     .hero-gradient {
       background: linear-gradient(rgba(18, 20, 20, 0.4), rgba(18, 20, 20, 0.8));
@@ -723,6 +721,17 @@
       const html = document.documentElement;
       const icon = toggle.querySelector('.material-symbols-outlined');
 
+      // Check if localStorage is available (fails on file:// protocol)
+      var storageAvailable = false;
+      try {
+        var testKey = '__sv_test__';
+        localStorage.setItem(testKey, '1');
+        localStorage.removeItem(testKey);
+        storageAvailable = true;
+      } catch(e) {
+        storageAvailable = false;
+      }
+
       function updateToggle() {
         const isDark = html.classList.contains('dark');
         icon.textContent = isDark ? 'light_mode' : 'dark_mode';
@@ -731,26 +740,25 @@
 
       toggle.addEventListener('click', function() {
         html.classList.toggle('dark');
-        const theme = html.classList.contains('dark') ? 'dark' : 'light';
-        try {
+        if (storageAvailable) {
+          var theme = html.classList.contains('dark') ? 'dark' : 'light';
           localStorage.setItem('sv-theme', theme);
-        } catch(e) {}
+        }
         updateToggle();
       });
 
       // Restore theme from localStorage
-      try {
-        const saved = localStorage.getItem('sv-theme');
+      if (storageAvailable) {
+        var saved = localStorage.getItem('sv-theme');
         if (saved === 'light') {
           html.classList.remove('dark');
         } else if (saved === 'dark') {
           html.classList.add('dark');
         } else {
-          // Invalid or missing value — default to dark
           html.classList.add('dark');
         }
-      } catch(e) {
-        // localStorage unavailable (e.g. private browsing) — default to dark
+      } else {
+        // localStorage unavailable (file:// or private browsing) — default to dark
         html.classList.add('dark');
       }
       updateToggle();
@@ -808,6 +816,20 @@
   <!-- Smooth scroll active link highlighting script -->
   <script>
     (function() {
+      // Handle anchor link clicks with JS to avoid file:// security origin issues
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+        var targetId = link.getAttribute('href').slice(1);
+        var target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Update URL hash without triggering navigation
+          history.pushState(null, '', '#' + targetId);
+        }
+      });
+
       // Select all sections with IDs that correspond to nav links
       var sections = document.querySelectorAll('section[id]');
       // Select desktop nav links
